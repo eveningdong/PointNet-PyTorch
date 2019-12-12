@@ -1,0 +1,85 @@
+# This file is covered by the LICENSE file in the root of this project.
+labels:
+  0: "Unclassified"
+  1: "Ground_bearRock"
+  2: "High Veg Individual Trees"
+  3: "Construction Stockpiles"
+  4: "Commercial Buildings"
+  5: "Construction_Material laydown"
+  6: "Construction_Structure"
+  7: "Construction_Temp_Buildings"
+  8: "Fence"
+  9: "Misc_Bridge"
+  10: "Parking Lot"
+  11: "Rail_Others_mostly boxy objects"
+  12: "Rail_Railway tracks"
+  13: "Residential buildings"
+  14: "Road_Main Roads"
+  15: "Road_Minor Streets"
+  16: "Sports Facilities-Track-Field"
+  17: "Street Furniture_Benches"
+  18: "Street Furniture_Bollards"
+  19: "Street Furniture_Lamp posts"
+  20: "Street Furniture_Other"
+  21: "Street Furniture_Road signs"
+  22: "Street Furniture_Traffic light"
+  23: "Vehicles_Cars"
+  24: "Vehicles_Lorries"
+  25: "Vehicles_Plant-Machinery"
+  26: "Wall"
+  27: "Footpath-Cycle Path"
+  28: "Vehicles_Bikes"
+  29: "Street Furniture_Traffic cones"
+  30: "Water_canals"
+
+remap_dict:
+  0: 0
+  1: 1
+  2: 2
+  3: 3
+  4: 6
+  5: 3
+  6: 3
+  7: 3
+  8: 11
+  9: 7
+  10: 1
+  11: 5
+  12: 5
+  13: 6
+  14: 7
+  15: 7
+  16: 1
+  17: 8
+  18: 8
+  19: 8
+  20: 8
+  21: 8
+  22: 8
+  23: 9
+  24: 10
+  25: 10
+  26: 11
+  27: 7
+  28: 12
+  29: 8
+  30: 4
+
+reduced_class_label:
+  0: "Unclassified"
+  1: "Ground"
+  2: "High Vegetation"
+  3: "Construction"
+  4: "Water"
+  5: "Rail"
+  6: "Buildings"
+  7: "Roads"
+  8: "Street Furniture"
+  9: "Cars"
+  10: "HGV"
+  11: "Walls"
+  12: "Bikes"
+
+
+
+

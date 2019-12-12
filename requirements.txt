@@ -1,0 +1,5 @@
+matplotlib
+ipdb
+open3d-python==0.3.0.0
+pandas
+pyyaml
