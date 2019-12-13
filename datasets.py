@@ -76,6 +76,41 @@ class SenSatTestDataset(data.Dataset):
     def __len__(self):
         return len(self.data_files)
 
+class SenSatPredDataset(data.Dataset):
+    def __init__(self, root='./data/processed_test', npoints=4096, mode='pred'):
+        self.npoints = npoints
+        self.root = root
+        self.num_classes = 13
+        
+        self.file_names = [f for f in os.listdir(self.root)]
+        self.data_files = [os.path.join(self.root, f) for f in self.file_names]
+
+    def __getitem__(self, index):
+        data_name = self.data_files[index]
+        file_name = self.file_names[index]
+        data = np.load(data_name)
+
+        if data.shape[0] < self.npoints:
+            data = np.tile(data, (2, 1))
+            data = data[:self.npoints, :]
+            batch_data = data.reshape((1, self.npoints, data.shape[1]))
+
+            batch_data = torch.from_numpy(batch_data)
+            return batch_data
+        
+        batch_size = data.shape[0] // self.npoints + 1
+        batch_data = np.zeros((batch_size, self.npoints, data.shape[1]), dtype=np.float32)
+
+        batch_data[:(batch_size-1), :, :] = data[:(batch_size-1)*self.npoints, :].reshape((batch_size-1, self.npoints, data.shape[1]))
+        batch_data[(batch_size-1), :, :] = data[-self.npoints:, :]
+
+        batch_data = torch.from_numpy(batch_data)
+        return batch_data, file_name
+
+    def __len__(self):
+        return len(self.data_files)
+
+
 
 if __name__ == '__main__':
     data_set = SenSatDataset()

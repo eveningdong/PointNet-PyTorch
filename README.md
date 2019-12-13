@@ -1,8 +1,4 @@
 ## PointNet
-Reimplementation of PointNet for point cloud segmentation.
-
-This is an (re-)implementation of [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593) in PyTorch for point cloud segmentation. The implementation is based on PointNet's original implementation in [TensorFlow](https://github.com/charlesq34/pointnet). The code is optimized for limited memory and GPU memory.
-
 ### Environment
 ```
 Ubuntu 18.04 LTS
@@ -29,6 +25,12 @@ python3 train_segmentation.py
 ### Test
 ```
 python3 test_segmentation.py --model path_to_checkpoint
+```
+
+### Predict
+Put `*_data.npy` files in a folder.
+```
+python3 pred_segmentation.py --model path_to_checkpoint --input path_to_input_dir --output path_to_output_dir
 ```
 
 ### Visualize
